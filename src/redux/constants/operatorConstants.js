@@ -1,0 +1,3 @@
+const GET_OPERATORS = 'GET_OPERATORS';
+
+export { GET_OPERATORS };
