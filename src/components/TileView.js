@@ -1,4 +1,3 @@
-/* eslint-disable react/no-did-mount-set-state,react/no-did-update-set-state */
 import * as React from 'react';
 import * as _ from 'lodash-es';
 import * as PropTypes from 'prop-types';
@@ -248,7 +247,7 @@ export default class TileView extends React.Component {
     const { filteredItems } = this.state;
 
     return (
-      <div className="oh-tile-view col-xs-12">
+      <div className="oh-tile-view">
         <div className="oh-tile-view__filters">{this.renderFilters()}</div>
         <div className="oh-tile-view__content">
           <div className="oh-tile-view__num-items">{filteredItems.length} items</div>

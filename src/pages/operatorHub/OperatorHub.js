@@ -1,4 +1,3 @@
-/* eslint-disable react/no-did-update-set-state */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import connect from 'react-redux/es/connect/connect';
@@ -10,9 +9,9 @@ import { CatalogTile } from 'patternfly-react-extensions';
 import { fetchOperators } from '../../services/operatorsService';
 import { helpers } from '../../common/helpers';
 
-import Footer from '../../components/footer';
-import Header from '../../components/header';
-import TileView from '../../components/tileView';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import TileView from '../../components/TileView';
 import { normalizeOperators } from '../../utils/operatorUtils';
 
 /**
@@ -243,11 +242,11 @@ class OperatorHub extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="oh-page">
         <Header />
-        {this.renderView()}
+        <div className="oh-content">{this.renderView()}</div>
         <Footer />
-      </React.Fragment>
+      </div>
     );
   }
 }
@@ -276,7 +275,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  ...state.operators.operators
+  ...state.operatorsState
 });
 
 export default connect(

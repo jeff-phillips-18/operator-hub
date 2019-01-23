@@ -5,6 +5,8 @@ module.exports = {
   rules: {
     'import/no-extraneous-dependencies': 'off',
     'no-console': 'off',
+    'react/no-did-mount-set-state': 'off',
+    'react/no-did-update-set-state': 'off',
     "prettier/prettier": [
       "error",
       {

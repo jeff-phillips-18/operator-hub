@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
 import { operatorsReducer } from './operatorsReducer';
 
+const GET_OPERATORS = 'GET_OPERATORS';
+
+const reduxConstants = { GET_OPERATORS };
+
 const reducers = {
-  operators: operatorsReducer
+  operatorsState: operatorsReducer
 };
 
 const reduxReducers = combineReducers(reducers);
 
-export { reduxReducers, reducers };
-
-export default reduxReducers;
+export { reduxConstants, reduxReducers, reducers };

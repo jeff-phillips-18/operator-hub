@@ -1,11 +1,40 @@
+.oh-page {
+  .oh-content {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
 
+    .breadcrumb {
+      margin-left: 40px;
+      margin-top: 10px;
+    }
+  }
 
-$catalog-item-icon-size-lg: 40px;
-$catalog-item-icon-size-sm: 24px;
+  @media (min-width: 1281px) {
+    margin: 0 80px;
+  }
+
+  @media (min-width: 1441px) {
+    margin: 0 320px;
+  }
+}
+
+.oh-header {
+  display: flex;
+  border: 1px solid $color-pf-black-300;
+  height: 85px;
+  padding: 20px 30px;
+}
+
+.oh-footer {
+  display: flex;
+  border: 1px solid $color-pf-black-300;
+  height: 185px;
+  padding: 20px 30px;
+}
 
 .oh-tile-view {
-  background: #fff;
-  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3,3,3,.2);
+  background: transparent;
   display: flex;
   padding: ($grid-gutter-width / 2) 0 0;
 
@@ -35,6 +64,7 @@ $catalog-item-icon-size-sm: 24px;
     background-color: transparent;
     border: none;
     padding: 0;
+
     &-title {
       color: $color-pf-black-700;
       font-size: 18px;
@@ -42,141 +72,55 @@ $catalog-item-icon-size-sm: 24px;
   }
 }
 
-.catalog-create-instance {
-  background-color: #fff;
+.oh-details-view {
+  background-color: $pf-color-white;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3,3,3,.2);
   display: flex;
-  flex-direction: column;
-  height: calc(100vh - 60px);
-  .catalog-create-instance-form {
-    flex: 1;
-  }
-}
+  flex-direction: row;
+  padding: 10px 15px 30px;
 
-.catalog-create-instance-dialog {
-  &.right-side-modal-pf .wizard-pf {
-    padding: 0;
-  }
-  .modal-body {
-    padding-bottom: 0;
-  }
-  .catalog-create-instance-form {
-    padding-top: 10px;
-    [class*='col-'] {
-      padding: 0 10px;
+  &__side-panel {
+    background-color: $pf-color-black-100;
+    margin-top: 20px;
+    padding: 10px 30px 30px 10px;
+
+    .properties-side-panel-pf {
+      width: 100%;
     }
-  }
-  .create-button {
-    margin-bottom: 20px;
-  }
-}
 
-.catalog-modal__body {
-  flex: 1;
-  overflow-y: auto;
-}
-
-.catalog-modal {
-  &__body {
-    display: flex;
-  }
-
-  &__description {
-    flex: 1;
-    padding-left: 20px;
-    &__header {
-      border-bottom: 1px solid $color-pf-black-300;
-      padding-bottom: 15px;
-      margin-bottom: 15px;
+    .oh-external-link {
+      display: block;
     }
-  }
-
-  &__wizard-description {
-    margin-bottom: 10px;
-  }
-
-  &__form-container label {
-    font-weight: 500;
-  }
-
-  &__subscribe {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
-  &__footer {
-    border-top: 1px solid $color-pf-black-200
-  }
-}
-
-.catalog-modal__long-description {
-  margin-top: 10px;
-}
-
-.catalog-form-control.form-control[readonly] {
-  background-color: $color-pf-white;
-  border: 0;
-  color: inherit;
-  font-weight: 700;
-  &[type=textarea] {
-    resize: none;
-  }
-}
-
-.catalog-dropdownselect {
-  .dropdown {
-    border-width: 0;
-    display: flex;
-    padding: 0;
-    width: 100%;
 
     .dropdown-menu {
-      width: 100%;
-    }
-    .dropdown-toggle.btn {
-      text-align: left;
-      width: 100%;
-    }
-    .dropdown-toggle.btn {
-      > span:first-child {
-        width: 92%;
-      }
-      > span {
-        display:inline-block;
-      }
+      font-size: inherit;
+      font-weight: inherit;
     }
 
-    .catalog-dropdownselect-menuitem {
-      margin-left: 0;
-      margin-right: 0;
-    }
-    .catalog-dropdownselect-menuitem-selected,
-    .catalog-dropdownselect-menuitem-selected:hover,
-    .catalog-dropdownselect-menuitem-selected:focus {
-      background-color: $color-pf-blue-400;
-      border-width: 0;
-      color: $color-pf-white;
-
-      > a, > a:focus {
-        background-color: inherit;
-        border-color: $color-pf-blue-400;
-        color: inherit;
-        outline: inherit;
-      }
-    }
-    .catalog-dropdownselect-menuitemname {
-      padding-left: 0;
-      padding-right: 0;
-    }
-    .catalog-dropdownselect-menuitemcheck {
-      padding-right: 5px;
-      text-align: right;
+    &__version-dropdown {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      font-size: inherit;
+      font-weight: inherit;
     }
   }
 }
 
-.catalog-create-instance-progressive-breadcrumbs {
-  .breadcrumb {
-    display: inline-block;
-    margin-left: 10px;
+.oh-external-link {
+  display: inline-block;
+  padding-right: 15px;
+
+  &::after {
+    content: "\f08e";
+    display:inline-block;
+    font-family: 'FontAwesome';
+    font-size: 75%;
+    height: 16px;
+    position:relative;
+    margin-left: 3px;
+    margin-right: -15px;
+    top:0;
+    width: 12px;
   }
 }

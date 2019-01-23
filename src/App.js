@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import OperatorHub from './pages/operator-hub/operator-hub';
-import OperatorPage from './pages/operator-page/operator-page';
+import OperatorHub from './pages/operatorHub/OperatorHub';
+import OperatorPage from './pages/operatorPage/OperatorPage';
 
 class App extends React.Component {
   navigateTo = path => {

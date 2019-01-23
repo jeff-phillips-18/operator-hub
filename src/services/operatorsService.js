@@ -3,7 +3,7 @@ import * as _ from 'lodash-es';
 import { Base64 } from 'js-base64';
 import yaml from 'js-yaml';
 import { helpers } from '../common/helpers';
-import * as operatorConstants from '../redux/constants/operatorConstants';
+import { reduxConstants } from '../redux';
 
 const gitHubURL = 'https://api.github.com';
 const operatorsRepo = `operator-framework/community-operators`;
@@ -14,7 +14,7 @@ const operatorContentsURL = `${gitHubURL}/repos/${operatorsRepo}/contents`;
 
 const fetchOperators = operatorName => dispatch => {
   dispatch({
-    type: helpers.PENDING_ACTION(operatorConstants.GET_OPERATORS)
+    type: helpers.PENDING_ACTION(reduxConstants.GET_OPERATORS)
   });
 
   const request = operatorName
@@ -41,7 +41,7 @@ const fetchOperators = operatorName => dispatch => {
         }
       });
       dispatch({
-        type: helpers.FULFILLED_ACTION(operatorConstants.GET_OPERATORS),
+        type: helpers.FULFILLED_ACTION(reduxConstants.GET_OPERATORS),
         payload: operators
       });
       return operators;
